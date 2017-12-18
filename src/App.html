@@ -1,0 +1,39 @@
+<h1>Hello {{name}}!</h1>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<Child/>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<Child/>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<Child/>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
+
+<script>
+	import Child from './Child.html';
+
+	export default {
+		components: {
+			Child
+		},
+		data() {
+			return {
+				name: "default"
+			}
+		},
+		oncreate() {
+			console.log("App.html")
+		}
+	}
+</script>
+
+<style>
+	h1 {
+		color: purple;
+	}
+</style>

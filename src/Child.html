@@ -1,0 +1,19 @@
+<h2>Child Component</h2>
+<button on:click="change()">+</button>{{count}}
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    change: function() {
+      let c = this.get('count') + 1;
+      this.set({count: c})
+    }
+  }
+}
+
+</script>
