@@ -1,5 +1,11 @@
 <h2>Child Component</h2>
-<button on:click="change()">+</button>{{count}}
+<table>
+  {{#each [0, 2, 4] as value}}
+  <tr><th>Number: </th><td>{{value}}</td></tr>
+  {{/each}}
+</table>
+<button on:click="change()">+</button>
+<span>{{count}}</span>
 
 <script>
 export default {
@@ -15,5 +21,4 @@ export default {
     }
   }
 }
-
 </script>

@@ -1,7 +1,12 @@
 import App from './App.html';
-setTimeout(() => {
+
+const button = document.getElementById('hydrate');
+button.addEventListener('click', function() {
 	window.app = new App({
 		target: document.querySelector('#app'),
-		hydrate: true
+		hydrate: true,
+		data: {
+			message: 'Hydrated'
+		}
 	});
-}, 1500);
+});

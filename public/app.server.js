@@ -8,7 +8,7 @@ function data$1() {
 
 var Child = {};
 
-Child.filename = "/Users/shancarter/experiments/ssr-svelte/src/Child.html";
+Child.filename = "/Users/shancarter/experiments/svelte-ssr/src/Child.html";
 
 Child.data = function() {
 	return data$1();
@@ -42,7 +42,11 @@ Child._render = function(__result, state, options) {
 	state = Object.assign(data$1(), state);
 
 	return `<h2>Child Component</h2>
-<button>+</button>${__escape$1(state.count)}`;
+<table>
+  ${ [0, 2, 4].map(value => `<tr><th>Number: </th><td>${__escape$1(value)}</td></tr>`).join("")}
+</table>
+<button>+</button>
+<span>${__escape$1(state.count)}</span>`;
 };
 
 Child.css = {
@@ -80,13 +84,13 @@ function __escape$1(html) {
 
 function data() {
 	return {
-		name: "default"
+		message: "SSR"
 	}
 }
 
 var App = {};
 
-App.filename = "/Users/shancarter/experiments/ssr-svelte/src/App.html";
+App.filename = "/Users/shancarter/experiments/svelte-ssr/src/App.html";
 
 App.data = function() {
 	return data();
@@ -119,7 +123,7 @@ App._render = function(__result, state, options) {
 
 	state = Object.assign(data(), state);
 
-	return `<h1 svelte-1615843476>Hello ${__escape(state.name)}!</h1>
+	return `<h1 svelte-617180641>Hello ${__escape(state.message)}!</h1>
 <p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
 ${Child._render(__result, {})}
 <p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>
@@ -137,8 +141,8 @@ ${Child._render(__result, {})}
 };
 
 App.css = {
-	code: "h1[svelte-1615843476]{color:purple}",
-	map: "{\"version\":3,\"file\":\"App.html\",\"sources\":[\"App.html\"],\"sourcesContent\":[\"<h1>Hello {{name}}!</h1>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n\\n<script>\\n\\timport Child from './Child.html';\\n\\n\\texport default {\\n\\t\\tcomponents: {\\n\\t\\t\\tChild\\n\\t\\t},\\n\\t\\tdata() {\\n\\t\\t\\treturn {\\n\\t\\t\\t\\tname: \\\"default\\\"\\n\\t\\t\\t}\\n\\t\\t},\\n\\t\\toncreate() {\\n\\t\\t\\tconsole.log(\\\"App.html\\\")\\n\\t\\t}\\n\\t}\\n</script>\\n\\n<style>\\n\\th1 {\\n\\t\\tcolor: purple;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAmCC,EAAE,mBAAC,CAAC,AACH,KAAK,CAAE,MAAM,AACd,CAAC\"}"
+	code: "h1[svelte-617180641]{color:purple}",
+	map: "{\"version\":3,\"file\":\"App.html\",\"sources\":[\"App.html\"],\"sourcesContent\":[\"<h1>Hello {{message}}!</h1>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<Child/>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n<p>This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. This could have long paragraphs. </p>\\n\\n<script>\\n\\timport Child from './Child.html';\\n\\n\\texport default {\\n\\t\\tcomponents: {\\n\\t\\t\\tChild\\n\\t\\t},\\n\\t\\tdata() {\\n\\t\\t\\treturn {\\n\\t\\t\\t\\tmessage: \\\"SSR\\\"\\n\\t\\t\\t}\\n\\t\\t},\\n\\t\\toncreate() {\\n\\t\\t\\tconsole.log(\\\"App.html\\\")\\n\\t\\t}\\n\\t}\\n</script>\\n\\n<style>\\n\\th1 {\\n\\t\\tcolor: purple;\\n\\t}\\n</style>\"],\"names\":[],\"mappings\":\"AAmCC,EAAE,kBAAC,CAAC,AACH,KAAK,CAAE,MAAM,AACd,CAAC\"}"
 };
 
 var warned = false;
